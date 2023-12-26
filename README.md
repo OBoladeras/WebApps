@@ -1,2 +1,6 @@
-# WebApps
-This GitHub repository showcases a portfolio of web applications
+# WebApps Repository
+Welcome to the WebApps repository! This repository contains a collection of web applications developed by OBoladeras. Each application serves a specific purpose and is designed to showcase various web development skills.
+
+## Project List
+- <a href="https://github.com/OBoladeras/WebApps/tree/main/kanban_board">Kanban Board</a>: A simple Kanban Board for task management.
+- <a href="https://github.com/OBoladeras/WebApps/tree/main/Phishing">Phising Projects</a>: Some phishing apps made for educational purposes.
