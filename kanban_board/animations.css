@@ -1,0 +1,38 @@
+@keyframes enterFromBottom {
+    from {
+        transform: translateY(200%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.animation-enterFromBottom {
+    animation-name: enterFromBottom;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes movePanel {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
+}
+
+.animation-hideRight {
+    animation-name: movePanel;
+    animation-duration: 0.75s;
+    animation-fill-mode: forwards;
+}
+
+.animation-showRight {
+    animation-name: movePanel;
+    animation-duration: 0.75s;
+    animation-direction: reverse;
+    animation-fill-mode: forwards;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Kanban Board - OBoladeras</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animations.css">
+
+    <script src="cookies.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <div class="pageHead">
+        <h1>Kanban Board</h1>
+        <a href="https://github.com/OBoladeras/" target="_blank">
+            <h2 class="subtitle">OBoladeras</h2>
+        </a>
+    </div>
+
+
+    <div class="mainBox">
+        <div class="panel" id="ideas">
+            <div class="head">
+                <h2>Ideas</h2>
+                <button onclick="createObject('ideas')" class="bigAddButton roundedButton">+</button>
+            </div>
+        </div>
+        <div class="panel" id="to_do">
+            <div class="head">
+                <h2>To do</h2>
+                <button onclick="createObject('to_do')" class="bigAddButton roundedButton">+</button>
+            </div>
+        </div>
+        <div class="panel" id="in_progress">
+            <div class="head">
+                <h2>In progress</h2>
+                <button onclick="createObject('in_progress')" class="bigAddButton roundedButton">+</button>
+            </div>
+        </div>
+        <div class="panel" id="done">
+            <div class="head">
+                <h2>Done</h2>
+                <button onclick="createObject('done')" class="bigAddButton roundedButton">+</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="infoPanel" id="infoPanel">
+        <div class="head">
+            <input type="text" placeholder="Title" class="titleInput" oninput="handleTitleInput(this)">
+            <button onclick="closeInfoPanel()" class="closeButton roundedButton">x</button>
+        </div>
+        <textarea class="descriptionInput" cols="30" rows="10" placeholder="Describe the task"
+            oninput="handleDescriptionInput(this)"></textarea>
+
+        <button class="deleteButton" onclick="deleteBox(editedID)">Delete Task</button>
+    </div>
+
+    <script>loadBoard();</script>
+</body>
+
+</html>
