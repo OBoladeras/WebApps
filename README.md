@@ -3,5 +3,5 @@ Welcome to the WebApps repository! This repository contains a collection of web 
 The repository can be readed and see the functional pages here: https://oboladeras.github.io/WebApps/
 
 ## Project List
-- <a href="https://github.com/OBoladeras/WebApps/blob/main/kanban_board/readme.md">Kanban Board</a>: A simple Kanban Board for task management.
-- <a href="https://github.com/OBoladeras/WebApps/tree/main/Phishing/README.md">Phising Projects</a>: Some phishing apps made for educational purposes.
+- <a href="https://github.com/OBoladeras/WebApps/blob/main/kanban_board">Kanban Board</a>: A simple Kanban Board for task management.
+- <a href="https://github.com/OBoladeras/WebApps/tree/main/Phishing">Phising Projects</a>: Some phishing apps made for educational purposes.
