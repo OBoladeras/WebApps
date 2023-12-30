@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Parking - Viena</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+    <div class="header">
+        <img src="../static/viena-logo.svg" alt="logoViena" class="logoImg">
+        <a href="https://www.viena.es/es/restaurants/">
+            <p class="textHead">Restaurantes</p>
+        </a>
+        <a href="https://www.viena.es/es/restaurants/">
+            <img data-lazyloaded="1" src="https://www.viena.es/wp-content/themes/viena/images/icon-pin.svg"
+                data-src="https://www.viena.es/wp-content/themes/viena/images/icon-pin.svg" width="43" height="43"
+                alt="" data-ll-status="loaded" class="entered litespeed-loaded">
+        </a>
+    </div>
+
+    <div class="loginDiv" style="height: 800px;">
+        <div style="height: 80px;"></div>
+        <div class="formDiv">
+
+            <div style="text-align: center;">
+                <h1 style="margin-top: 0px;">Servicio Parking</h1>
+            </div>
+
+            <div class="success-message">
+                <h2>¡Gracias por enviar el formulario!</h2>
+                <p>Nos pondremos en contacto contigo lo antes posible.</p>
+
+                <div class="buttonDiv">
+                    <a href="https://viena.es/es/" class="button">Volver al inicio</a>
+                </div>
+            </div>
+
+        </div>
+        <div style="height: 80px;"></div>
+    </div>
+
+    <div class="footer">
+        <div class="menu-menu-pie-1-container">
+            <ul>
+                <li id="menu-item-38452">
+                    <a href="https://www.viena.es/es/aviso-legal/">Aviso legal</a>
+                </li>
+                <li id="menu-item-38453">
+                    <a href="https://www.viena.es/es/politica-de-privacidad/">Política de privacidad</a>
+                </li>
+                <li id="menu-item-38454">
+                    <a href="https://www.viena.es/es/politica-videovigilancia/">Política Videovigilancia</a>
+                </li>
+                <li id="menu-item-38455">
+                    <a href="https://www.viena.es/es/politica-de-cookies/">Política de cookies</a>
+                </li>
+                <li id="menu-item-38455">
+                    <a href="https://www.viena.es/es/politica-canal-de-cumplimiento/">Canal de cumplimiento</a>
+                </li>
+            </ul>
+        </div>
+        <div class="menu-menu-pie-2-container">
+            <ul>
+                <li id="menu-item-38452">
+                    <a href="https://www.viena.es/es/contacto/">Contacto</a>
+                </li>
+                <li id="menu-item-38453">
+                    <a href="https://www.viena.es/es/atencion-al-cliente/">Atención al cliente</a>
+                </li>
+                <li id="menu-item-38454">
+                    <a href="https://www.viena.es/es/restaurants/">Restaurantes</a>
+                </li>
+                <li id="menu-item-38455">
+                    <a href="https://viena.ofertas-trabajo.infojobs.net/">Trabaja con nosotros</a>
+                </li>
+            </ul>
+        </div>
+        <div class="menu-menu-pie-3-container">
+            <ul>
+                <li id="menu-item-38452">
+                    <a href="https://www.viena.es/es/memoria-anual/">Empresa</a>
+                </li>
+                <li id="menu-item-38453">
+                    <a href="https://www.viena.es/es/blog/">Blog</a>
+                </li>
+            </ul>
+        </div>
+        <ul class="social">
+            <li>
+                <a href="http://www.instagram.com/Vienasocvienes" target="_blank">
+                    <img data-lazyloaded="1"
+                        src="https://www.viena.es/wp-content/themes/viena/images/icon-instagram.svg"
+                        data-src="https://www.viena.es/wp-content/themes/viena/images/icon-instagram.svg" width="35"
+                        height="35" alt="Viena Instagram" data-ll-status="loaded" class="entered litespeed-loaded">
+                </a>
+            </li>
+            <li>
+                <a href="http://www.facebook.com/VienaSocVienes" target="_blank">
+                    <img data-lazyloaded="1" src="https://www.viena.es/wp-content/themes/viena/images/icon-facebook.svg"
+                        data-src="https://www.viena.es/wp-content/themes/viena/images/icon-facebook.svg" width="35"
+                        height="35" alt="Viena Facebook" data-ll-status="loaded" class="entered litespeed-loaded">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/company/establiments-viena-s.a./" target="_blank">
+                    <img data-lazyloaded="1" src="https://www.viena.es/wp-content/themes/viena/images/icon-linkedin.svg"
+                        data-src="https://www.viena.es/wp-content/themes/viena/images/icon-linkedin.svg" width="35"
+                        height="35" alt="Viena Linkedin" data-ll-status="loaded" class="entered litespeed-loaded">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/channel/UC_O2vrtsDOfDY8MwAalq_uw" target="_blank">
+                    <img data-lazyloaded="1" src="https://www.viena.es/wp-content/themes/viena/images/icon-youtube.svg"
+                        data-src="https://www.viena.es/wp-content/themes/viena/images/icon-youtube.svg" width="35"
+                        height="35" alt="Viena YouTube" data-ll-status="loaded" class="entered litespeed-loaded">
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        var button = document.getElementById("allowCookies");
+        var button2 = document.getElementById("denyCookies");
+        var div = document.getElementById("simple-cookie-consent");
+
+        button.addEventListener("click", function () {
+            div.style.display = "none";
+        });
+        button2.addEventListener("click", function () {
+            div.style.display = "none";
+        });
+    </script>
+</body>
+
+</html>

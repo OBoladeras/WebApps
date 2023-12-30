@@ -1,0 +1,231 @@
+body {
+    margin: 0%;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+/* Header */
+.header {
+    height: 105;
+    padding: 1.87em;
+    display: flex;
+    background-attachment: scroll;
+}
+
+.header .textHead {
+    color: #FF6B00;
+    cursor: pointer;
+    text-align: right;
+    font-size: 1.75em;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    text-transform: uppercase;
+    font-stretch: 100%;
+    text-size-adjust: 100%;
+    line-height: 42px;
+    font-weight: 300;
+    justify-content: space-between;
+
+    margin-top: 0px;
+    margin-bottom: 10%;
+    margin-right: 20px;
+}
+
+.header a {
+    text-decoration: none;
+}
+
+.header .logoImg {
+    height: 48px;
+    margin-left: 0px;
+    margin-right: 70%;
+}
+
+
+/* Footer */
+.footer {
+    display: flex;
+    height: 202.5px;
+    padding-left: 70.2px;
+    padding-right: 70.2px;
+    padding-top: 22.5px;
+    padding-bottom: 15px;
+    background-color: rgb(255, 225, 204);
+}
+
+.footer ul {
+    padding: 0%;
+    margin-right: 57.6px;
+    margin-bottom: 30px;
+    display: block;
+}
+
+.footer li {
+    text-decoration: none;
+    font-weight: 300;
+    list-style-image: none;
+    list-style-type: none;
+    height: 27px;
+}
+
+.footer a {
+    color: rgb(255, 107, 0);
+    cursor: pointer;
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    text-decoration-color: rgb(255, 107, 0);
+    text-transform: uppercase;
+    font-stretch: 100%;
+}
+
+.footer .social {
+    display: flex;
+    flex-shrink: 0;
+    margin: 0 .65em 2em 0;
+}
+
+.footer .social a {
+    margin-left: 9.75px;
+}
+
+
+/* Cookies */
+.cookiesClass a {
+    color: rgb(255, 107, 0);
+}
+
+.cookie-consent-notice {
+    font-family: inherit;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    margin-bottom: 16px;
+    line-height: 22.4px;
+}
+
+#simple-cookie-consent {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    resize: vertical;
+    overflow: auto;
+    z-index: 999999999;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+#simple-cookie-consent .cookie-consent-container {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    right: 20px;
+    margin: -100px auto 0;
+    padding: 22;
+    background: #fff;
+    padding: 20px;
+    width: 456px;
+    height: 210px;
+}
+
+#simple-cookie-consent .cookie-consent-selection {
+    text-align: right;
+}
+
+#simple-cookie-consent button {
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 0 0 10px;
+    background: none;
+    font-size: 1.1em;
+}
+
+#simple-cookie-consent button.cookie-consent-allow {
+    background-color: #000000;
+    color: #fff;
+}
+
+#simple-cookie-consent button.cookie-consent-allow:focus,
+#simple-cookie-consent button.cookie-consent-allow:hover {
+    cursor: pointer;
+}
+
+#simple-cookie-consent button.cookie-consent-deny {
+    padding: 5px 0;
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+#simple-cookie-consent button.cookie-consent-deny:focus,
+button.cookie-consent-deny:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+#simple-cookie-consent hr {
+    margin: 15px 0;
+}
+
+
+/* Login*/
+.loginDiv {
+    background: url('https://www.viena.es/wp-content/uploads/2021/04/viena-cadires.jpg') no-repeat 0 0;
+    background-size: cover;
+}
+
+.formDiv {
+    background-color: #ffffffcc;
+    margin: 0 28.5%;
+
+    padding: 4% 6%;
+}
+
+.formDiv h1 {
+    margin-bottom: 25px;
+    color: rgb(255, 107, 0);
+    font-weight: 500;
+    font-size: 2.75em;
+
+    width: 100%;
+    align-self: center;
+}
+
+.formDiv input {
+    appearance: none;
+    background-color: rgb(255, 255, 255);
+    border-color: rgba(255, 255, 255, 0);
+    color: rgb(0, 0, 0);
+    border-image-repeat: stretch;
+    font-weight: 400;
+    width: 100%;
+    padding: 11px 5.5px;
+    margin: 10px;
+}
+
+.formDiv #submit {
+    background-color: #ff6b00;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+
+    width: 80px;
+    height: 40px;
+    margin: 21px 238px;
+    padding: 0 15px;
+}
+
+.formDiv ul {
+    padding: 0%;
+}
+
+.formDiv li {
+    list-style-image: none;
+    list-style-type: none;
+    text-decoration: none;
+
+
+}
+
+.formDiv a {
+    color: rgb(255, 107, 0);
+}

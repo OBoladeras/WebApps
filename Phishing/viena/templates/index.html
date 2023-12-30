@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Parking - Viena</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+    <div class="header">
+        <img src="../static/viena-logo.svg" alt="logoViena" class="logoImg">
+        <a href="https://www.viena.es/es/restaurants/">
+            <p class="textHead">Restaurantes</p>
+        </a>
+        <a href="https://www.viena.es/es/restaurants/">
+            <img data-lazyloaded="1" src="https://www.viena.es/wp-content/themes/viena/images/icon-pin.svg"
+                data-src="https://www.viena.es/wp-content/themes/viena/images/icon-pin.svg" width="43" height="43"
+                alt="" data-ll-status="loaded" class="entered litespeed-loaded">
+        </a>
+    </div>
+
+    <div id="simple-cookie-consent" class="cookiesClass">
+        <div class="cookie-consent-container">
+            <div class="cookie-consent-notice">
+                <p> Viena utiliza cookies propias y de terceros con fines analíticos y para mostrarte publicidad
+                    personalizada de acuerdo con tus hábitos de navegación. Puedes aceptar todas las cookies, rechazar
+                    su uso o gestionar tus preferencias en el panel de configuración. Puedes consultar nuestra
+                    <a href="https://www.viena.es/ca/politica-de-cookies/">Política de uso de cookies</a>.
+                </p>
+            </div>
+            <div class="cookie-consent-selection">
+                <button value="true" class="cookie-consent-allow" id="allowCookies">Acceptar todas las cookies</button>
+                <button value="false" class="cookie-consent-deny" id="denyCookies">Rechazar todas las cookies</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="loginDiv">
+        <div style="height: 80px;"></div>
+        <div class="formDiv">
+
+            <div style="text-align: center;">
+                <h1 style="margin-top: 0px;">Servicio Parking</h1>
+            </div>
+            <form action="/submit" method="post">
+                <small>* Campos obligatorios</small>
+                <input type="text" name="name" placeholder="Nombre *" required>
+                <input type="text" name="surname" placeholder="Apellido">
+                <input type="text" name="empresa" placeholder="Nombre Empresa *" required>
+                <input type="email" name="email" placeholder="Correo Electronico *" required>
+                <input type="text" name="registration" placeholder="Matricula *" required>
+                <input type="password" name="password" id="password" placeholder="Contraseña *" required>
+                <input type="password" name="password2" id="password2" placeholder="Confirmar Contraseña *" required>
+
+                <input type="submit" name="submit" id="submit" name="submit" value="Enviar" class="btn">
+            </form>
+
+            <h2>Información básica sobre Protección de Datos</h2>
+            <ul>
+                <li>
+                    <strong>Responsable</strong>
+                    : Establiments Viena, S.A.
+                </li>
+                <li>
+                    <strong>Finalidad</strong>
+                    : Gestionar y dar respuesta a su consulta o solicitud, así como el envío para el envío de
+                    documentación en caso de que así lo requiera.
+                </li>
+                <li>
+                    <strong>Legitimación</strong>
+                    : Consentimiento del interesado
+                </li>
+                <li>
+                    <strong>Destinatarios</strong>
+                    : Empresas que nos ayudan a gestionar nuestra relación comercial, así como la página web.
+                </li>
+                <li>
+                    <strong>Derechos</strong>
+                    : Acceder, rectificar y suprimir los datos, así́ como otros derechos que otorga la normativa de
+                    protección de datos.
+                </li>
+                <li>
+                    <strong>Información adicional</strong>
+                    : Puede consultar la información adicional y detallada sobre Protección de Datos en nuestra
+                    página web: <a
+                        href="https://www.viena.es/es/politica-de-privacidad/">https://www.viena.es/es/politica-de-privacidad/</a>
+                </li>
+            </ul>
+        </div>
+        <div style="height: 80px;"></div>
+    </div>
+
+    <div class="footer">
+        <div class="menu-menu-pie-1-container">
+            <ul>
+                <li id="menu-item-38452">
+                    <a href="https://www.viena.es/es/aviso-legal/">Aviso legal</a>
+                </li>
+                <li id="menu-item-38453">
+                    <a href="https://www.viena.es/es/politica-de-privacidad/">Política de privacidad</a>
+                </li>
+                <li id="menu-item-38454">
+                    <a href="https://www.viena.es/es/politica-videovigilancia/">Política Videovigilancia</a>
+                </li>
+                <li id="menu-item-38455">
+                    <a href="https://www.viena.es/es/politica-de-cookies/">Política de cookies</a>
+                </li>
+                <li id="menu-item-38455">
+                    <a href="https://www.viena.es/es/politica-canal-de-cumplimiento/">Canal de cumplimiento</a>
+                </li>
+            </ul>
+        </div>
+        <div class="menu-menu-pie-2-container">
+            <ul>
+                <li id="menu-item-38452">
+                    <a href="https://www.viena.es/es/contacto/">Contacto</a>
+                </li>
+                <li id="menu-item-38453">
+                    <a href="https://www.viena.es/es/atencion-al-cliente/">Atención al cliente</a>
+                </li>
+                <li id="menu-item-38454">
+                    <a href="https://www.viena.es/es/restaurants/">Restaurantes</a>
+                </li>
+                <li id="menu-item-38455">
+                    <a href="https://viena.ofertas-trabajo.infojobs.net/">Trabaja con nosotros</a>
+                </li>
+            </ul>
+        </div>
+        <div class="menu-menu-pie-3-container">
+            <ul>
+                <li id="menu-item-38452">
+                    <a href="https://www.viena.es/es/memoria-anual/">Empresa</a>
+                </li>
+                <li id="menu-item-38453">
+                    <a href="https://www.viena.es/es/blog/">Blog</a>
+                </li>
+            </ul>
+        </div>
+        <ul class="social">
+            <li>
+                <a href="http://www.instagram.com/Vienasocvienes" target="_blank">
+                    <img data-lazyloaded="1"
+                        src="https://www.viena.es/wp-content/themes/viena/images/icon-instagram.svg"
+                        data-src="https://www.viena.es/wp-content/themes/viena/images/icon-instagram.svg" width="35"
+                        height="35" alt="Viena Instagram" data-ll-status="loaded" class="entered litespeed-loaded">
+                </a>
+            </li>
+            <li>
+                <a href="http://www.facebook.com/VienaSocVienes" target="_blank">
+                    <img data-lazyloaded="1" src="https://www.viena.es/wp-content/themes/viena/images/icon-facebook.svg"
+                        data-src="https://www.viena.es/wp-content/themes/viena/images/icon-facebook.svg" width="35"
+                        height="35" alt="Viena Facebook" data-ll-status="loaded" class="entered litespeed-loaded">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/company/establiments-viena-s.a./" target="_blank">
+                    <img data-lazyloaded="1" src="https://www.viena.es/wp-content/themes/viena/images/icon-linkedin.svg"
+                        data-src="https://www.viena.es/wp-content/themes/viena/images/icon-linkedin.svg" width="35"
+                        height="35" alt="Viena Linkedin" data-ll-status="loaded" class="entered litespeed-loaded">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/channel/UC_O2vrtsDOfDY8MwAalq_uw" target="_blank">
+                    <img data-lazyloaded="1" src="https://www.viena.es/wp-content/themes/viena/images/icon-youtube.svg"
+                        data-src="https://www.viena.es/wp-content/themes/viena/images/icon-youtube.svg" width="35"
+                        height="35" alt="Viena YouTube" data-ll-status="loaded" class="entered litespeed-loaded">
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        function checkPasswords(event) {
+            var password = document.getElementById("password").value;
+            var password2 = document.getElementById("password2").value;
+
+            if (password != password2) {
+                alert("Las contraseñas no coinciden");
+                event.preventDefault();
+            }
+        }
+
+        document.getElementById("submit").addEventListener("click", checkPasswords);
+        document.querySelector("form").addEventListener("submit", checkPasswords);
+    </script>
+    <script>
+        var button = document.getElementById("allowCookies");
+        var button2 = document.getElementById("denyCookies");
+        var div = document.getElementById("simple-cookie-consent");
+
+        button.addEventListener("click", function () {
+            div.style.display = "none";
+        });
+        button2.addEventListener("click", function () {
+            div.style.display = "none";
+        });
+    </script>
+</body>
+
+</html>
