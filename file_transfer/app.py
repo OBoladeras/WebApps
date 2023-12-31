@@ -30,7 +30,6 @@ def transfer():
         print(request.url_root)
         url = f"{request.url_root}download/{token}"
         return render_template("success.html", title=title, url=url)
-        return jsonify({"success": True, "token": token}), 200
 
 
 @app.route("/download/<token>", methods=["GET"])
@@ -70,4 +69,4 @@ def download_zip(token):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False, host="0.0.0.0")
