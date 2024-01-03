@@ -105,7 +105,7 @@ function closeInfoPanel(save = true) {
             "description": infoPanel.children[1].value
         }
 
-        setCookie(cookieName, data, 7);
+        setCookie(cookieName, data, 60);
     }
 }
 
@@ -213,7 +213,7 @@ function drag(element) {
             "title": element.children[0].innerHTML,
             "description": element.children[1].innerHTML
         }
-        setCookie(cookieName, data, 7);
+        setCookie(cookieName, data, 60);
 
         document.removeEventListener('mousemove', handleMouseMove);
         document.removeEventListener('mouseup', handleMouseUp);
