@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Message App</title>
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='uivers.css') }}">
+
+    <link rel="stylesheet" media="screen and (max-width: 1920px)" href="{{url_for('static', filename='midstyle.css')}}">
+    <link rel="stylesheet" media="screen and (max-width: 1000px)"
+        href="{{url_for('static', filename='smallstyle.css')}}">
+
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</head>
+
+
+<body>
+    {% include 'blocks/chat.html' %}
+
+    <script>
+            messagesDiv = document.getElementById('messagesDiv');
+            input = document.getElementById('messageInputDiv');
+    
+            input.style.display = 'flex';
+            messagesDiv.style.display = 'block';
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        </script>
+</body>
+
+</html>

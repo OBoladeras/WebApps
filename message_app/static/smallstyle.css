@@ -1,0 +1,15 @@
+body {
+    zoom: 2.2;
+}
+
+#rightDiv {
+    display: none;
+}
+
+.show {
+    display: flex;
+}
+
+#contacts {
+    width: 100% !important;
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Message App</title>
+
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="static/uivers.css">
+
+    <link rel="stylesheet" href="static/login.css">
+
+    <link rel="stylesheet" media="screen and (max-width: 1920px)" href="static/midstyle.css">
+    <link rel="stylesheet" media="screen and (max-width: 1000px)" href="static/smallstyle.css">
+
+    <script src="static/main.js"></script>
+</head>
+
+<body>
+    <div id="contacts">
+        <div class="profile">
+            <img src="static/img/profile.jpg" alt="Profile Picture">
+            <div>
+                <h2 data-tooltip="{{public_key}}">{{username}}</h2>
+                <p style="color: green;">Online</p>
+            </div>
+            <button class="Btn" onclick="handleAddContact()">
+                <div class="sign">+</div>
+                <div class="text">Add</div>
+            </button>
+        </div>
+
+        <form class="searcher">
+            <button>
+                <svg width="17" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"
+                    aria-labelledby="search">
+                    <path d="M7.667 12.667A5.333 5.333 0 107.667 2a5.333 5.333 0 000 10.667zM14.334 14l-2.9-2.9"
+                        stroke="currentColor" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round">
+                    </path>
+                </svg>
+            </button>
+            <input class="input" placeholder="Type your text" required="" type="text" id="searcherInput"
+                oninput="handleSearcher()">
+            <button class="reset" type="reset" onclick="handleSearcher(true)">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </form>
+
+        {% if contacts %}
+        {% for contact in contacts %}
+        {% include 'contact.html' %}
+        {% endfor %}
+        {% endif %}
+    </div>
+
+    <div id="rightDiv" class="waitingChat show">
+        <div class="typewriter" id="typewriter">
+            <div class="slide"><i></i></div>
+            <div class="paper"></div>
+            <div class="keyboard"></div>
+        </div>
+
+        {% include 'blocks/chat.html' %}
+    </div>
+
+    <script>handleMessages();</script>
+
+    <div class="wrapper">
+        <div class="card-switch">
+            <label class="switch">
+                <div class="flip-card__inner">
+                    <div class="flip-card__front">
+                        <div class="title">Add contact</div>
+                        <form class="flip-card__form" method="post">
+                            <input type="text" name="post_type" value="add_contact" hidden>
+                            <input class="flip-card__input" name="username" placeholder="Username" type="name" required>
+                            <input class="flip-card__input" name="public_key" placeholder="Public key" type="text"
+                                required>
+                            <button class="flip-card__btn">Add</button>
+                        </form>
+                    </div>
+                </div>
+            </label>
+        </div>
+    </div>
+
+    {% if share_error %}
+    <style>
+        .wrapper {
+            animation: shake 0.2s linear 1;
+        }
+    </style>
+    {% endif %}
+
+</body>
+
+</html>

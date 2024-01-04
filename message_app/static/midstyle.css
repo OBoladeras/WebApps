@@ -1,0 +1,14 @@
+body {
+    margin: 0px;
+}
+
+
+#contacts {
+    height: 100vh;
+    border-radius: 0%;
+}
+
+#rightDiv {
+    height: 100vh;
+    border-radius: 0%;
+}

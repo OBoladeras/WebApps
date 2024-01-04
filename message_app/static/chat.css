@@ -1,0 +1,40 @@
+:root {
+    --zoomLevel: 3;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+
+    font-size: 10px;
+}
+
+
+#rightDiv {
+    width: 100%;
+    height: 100vh;
+
+    border-radius: 0px;
+
+}
+
+#messagesDiv {
+    display: block;
+    zoom: var(--zoomLevel);
+}
+
+.messageDiv {
+    margin: 1px 5px;
+    padding: 5px 10px;
+}
+
+#messageInputDiv {
+    display: flex;
+    zoom: var(--zoomLevel);
+}
+
+#messageInput {
+    zoom: var(--zoomLevel);
+
+    font-size: 5px;
+}

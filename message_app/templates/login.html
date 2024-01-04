@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Message App</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+
+            background-color: #0c1317;
+            overflow: hidden;
+        }
+    </style>
+    <link rel="stylesheet" href="static/login.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="card-switch">
+            <label class="switch">
+                <input type="checkbox" class="toggle">
+                <span class="slider"></span>
+                <span class="card-side"></span>
+                <div class="flip-card__inner">
+                    <div class="flip-card__front">
+                        <div class="title">Log in</div>
+                        <form class="flip-card__form" action="/authentication/login" method="post">
+                            <input class="flip-card__input" name="username" placeholder="Username" type="name" required>
+                            <input class="flip-card__input" name="password" placeholder="Password" type="password"
+                                required>
+                            <button class="flip-card__btn">Let`s go!</button>
+                        </form>
+                    </div>
+                    <div class="flip-card__back">
+                        <div class="title">Sign up</div>
+                        <form class="flip-card__form" action="/authentication/signup" method="post"
+                            onsubmit="return validatePasswords()">
+                            <input class="flip-card__input" name="username" placeholder="Username" type="name" required>
+                            <input class="flip-card__input" name="password" id="password" placeholder="Password"
+                                type="password" required>
+                            <input class="flip-card__input" name="password2" id="password2"
+                                placeholder="Repeat password" type="password" required>
+                            <button class="flip-card__btn">Confirm!</button>
+                        </form>
+                    </div>
+                </div>
+            </label>
+        </div>
+    </div>
+
+    <script>
+        function validatePasswords() {
+            var password = document.getElementById("password").value;
+            var password2 = document.getElementById("password2").value;
+
+            if (password !== password2) {
+                alert("Passwords do not match");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+
+
+    {% if error %}
+    <style>
+        .wrapper {
+            animation: shake 0.2s linear 1;
+        }
+    </style>
+    {% endif %}
+</body>
+
+</html>
