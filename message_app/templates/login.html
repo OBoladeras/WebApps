@@ -29,7 +29,7 @@
                     <div class="flip-card__front">
                         <div class="title">Log in</div>
                         <form class="flip-card__form" action="/authentication/login" method="post">
-                            <input class="flip-card__input" name="username" placeholder="Username" type="name" required>
+                            <input class="flip-card__input" name="email" placeholder="Email" type="email" required>
                             <input class="flip-card__input" name="password" placeholder="Password" type="password"
                                 required>
                             <button class="flip-card__btn">Let`s go!</button>
@@ -39,6 +39,7 @@
                         <div class="title">Sign up</div>
                         <form class="flip-card__form" action="/authentication/signup" method="post"
                             onsubmit="return validatePasswords()">
+                            <input class="flip-card__input" name="email" placeholder="Email" type="email" required>
                             <input class="flip-card__input" name="username" placeholder="Username" type="name" required>
                             <input class="flip-card__input" name="password" id="password" placeholder="Password"
                                 type="password" required>

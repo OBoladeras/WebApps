@@ -11,6 +11,7 @@ USE messageDatabase;
 
 CREATE TABLE user (
     id VARCHAR(20) NOT NULL UNIQUE,
+    email VARCHAR(255) NOT NULL UNIQUE,
 
     username VARCHAR(255) NOT NULL,
     public_key VARCHAR(3) NOT NULL,

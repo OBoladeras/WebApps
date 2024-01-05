@@ -1,13 +1,8 @@
 <div id="messagesDiv">
     <div id="messageBlock">
-        {% if messages %}
-        {% for message in messages %}
-        {% include 'message.html' %}
-        {% endfor %}
-        {% endif %}
     </div>
 </div>
 
-<form id="messageInputDiv" onsubmit="">
+<form id="messageInputDiv">
     <input placeholder="Write a message" id="messageInput">
 </form>

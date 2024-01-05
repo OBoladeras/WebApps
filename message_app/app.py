@@ -10,17 +10,25 @@ app.secret_key = "secret_key"
 def index():
     if "username" not in session:
         return redirect(url_for("login"))
+
     else:
         if request.method == "POST":
             if request.form["post_type"] == "add_contact":
                 username = request.form["username"]
                 public_key = request.form["public_key"]
 
+                if Database().insert_contact(username, public_key, session["user_id"]):
+                    return redirect(url_for("index"))
+                else:
+                    session["share_error"] = ["Invalid username or public key"]
+                    return redirect(url_for("index"))
         else:
             return render_template(
                 "index.html",
                 username=session["username"],
                 public_key=session["public_key"],
+                share_error=session.pop("share_error", None),
+                contacts=Database().select_contacts(session["user_id"]),
             )
 
 
@@ -34,9 +42,10 @@ def login():
 # Api Side
 @app.route("/authentication/<typeA>", methods=["POST"])
 def authentication(typeA):
-    def answer(user_id, public_key):
+    def answer(user_id, username, public_key):
         if user_id:
             session["user_id"] = user_id
+            session["username"] = username
             session["public_key"] = public_key
             return redirect(url_for("index"))
         else:
@@ -45,39 +54,45 @@ def authentication(typeA):
 
     if "authentication" in request.url:
         if typeA == "login":
-            username = request.form["username"]
+            email = request.form["email"]
             password = request.form["password"]
 
-            user_id, public_key = Database().login(
-                username, PasswordEncryptor().encrypt(password)
+            user_id, public_key, username = Database().login(
+                email, PasswordEncryptor().encrypt(password)
             )
-            return answer(user_id, public_key)
+            return answer(user_id, username, public_key)
         elif typeA == "signup":
+            email = request.form["email"]
             username = request.form["username"]
             password = request.form["password"]
 
-            user_id, public_key = Database().signup(
-                username, PasswordEncryptor().encrypt(password)
+            user_id, public_key, username = Database().signup(
+                email, username, PasswordEncryptor().encrypt(password)
             )
-            return answer(user_id, public_key)
+            return answer(user_id, username, public_key)
         else:
             return render_template("login.html")
+
+
+@app.route("/message/<contact_id>", methods=["POST"])
+def loadChat(contact_id=None):
+    if contact_id:
+        return Database().select_messages_chat(contact_id, session["user_id"])
 
 
 @app.route("/message", methods=["POST"])
 def receive_message():
     try:
         data = request.get_json()
-        name = data.get("name")
         message = data.get("message")
+        sender_id = data.get("senderID")
+        receiver_id = data.get("receiverID")
 
-        print(f"Received message from {name}: {message}")
+        return jsonify({"success": True})
 
-        return jsonify(
-            {"status": "success", "message": "Message received successfully"}
-        )
     except Exception as e:
-        return jsonify({"status": "error", "message": str(e)})
+        print(f"Error: {str(e)}")
+        return jsonify({"error": "Invalid data format"}), 400
 
 
 if __name__ == "__main__":

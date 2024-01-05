@@ -1,3 +1,5 @@
+var contact_id = "";
+
 function handleSearcher(clear = false) {
     input = document.getElementById('searcherInput');
     contacts = document.getElementsByClassName('contact');
@@ -18,24 +20,23 @@ function handleSearcher(clear = false) {
     }
 }
 
-
 function handleMessages() {
-    function sendMessage(senderID, receiverID) {
+    function sendMessage() {
         input = document.getElementById('messageInput');
         messagesDiv = document.getElementById('messagesDiv');
         messagesBlock = document.getElementById('messageBlock');
 
         if (input.value == '') { return; }
 
-        fetch('message', {
+        fetch('/message', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                'message': input.value,
+                'message': messageInput.value,
                 'senderID': senderID,
-                'receiverID': receiverID
+                'receiverID': contact_id,
             })
         }).catch(error => {
             alert('Error sending message');
@@ -63,7 +64,6 @@ function handleMessages() {
     form.addEventListener("submit", sendMessage);
 }
 
-
 function handleAddContact() {
     var allElements = document.querySelectorAll('body *');
     var wrapDiv = document.querySelector('.wrapper');
@@ -89,26 +89,49 @@ function handleAddContact() {
     }, 1000);
 }
 
+// <div class="messageDiv">
+// <p>{{ message }}</p>
+// </div>
+function loadChat(id) {
+    contact_id = id;
+    rightDiv = document.getElementById('rightDiv');
+    messagesDiv = document.getElementById('messagesDiv');
+    input = document.getElementById('messageInputDiv');
 
-function loadChat(id = null) {
-    const maxWidth = window.innerWidth;
+    rightDiv.className = '';
+    input.style.display = 'flex';
+    messagesDiv.style.display = 'block';
+    messagesDiv.scrollTop = messagesDiv.scrollHeight;
 
-    if (maxWidth < 1000) {
-        window.location.href = '/chat/' + id;
+    typewriter = document.getElementById('typewriter');
+    if (typewriter) {
+        typewriter.style.display = 'none';
     }
-    else {
-        rightDiv = document.getElementById('rightDiv');
-        messagesDiv = document.getElementById('messagesDiv');
-        input = document.getElementById('messageInputDiv');
 
-        rightDiv.className = '';
-        input.style.display = 'flex';
-        messagesDiv.style.display = 'block';
-        messagesDiv.scrollTop = messagesDiv.scrollHeight;
-
-        typewriter = document.getElementById('typewriter');
-        if (typewriter) {
-            typewriter.style.display = 'none';
-        }
+    messageBlock = document.getElementById('messageBlock');
+    while (messageBlock.firstChild) {
+        messageBlock.removeChild(messageBlock.firstChild);
     }
+
+    fetch('messages/' + contact_id, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    }).then(response => response.json())
+        .then(messages => {
+            for (i = 0; i < messages.length; i++) {
+                newMessage = document.createElement('div');
+                newMessage.className = 'messageDiv';
+
+                text = document.createElement('p');
+                text.innerHTML = messages[i].message;
+
+                newMessage.appendChild(text);
+                messageBlock.appendChild(newMessage);
+            }
+        }).catch(error => {
+            alert('Error loading messages');
+            return;
+        });
 }
